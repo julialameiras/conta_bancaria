@@ -6,13 +6,35 @@ let opcao: number;
 
 export function main() {
 
+/* Exemplo do cookbook */
+
     const conta: Conta = new Conta(1, 123, 1, "João da Silva", 1000);
 
     conta.visualizar();
     conta.sacar(500);
     conta.visualizar();
     conta.depositar(1000);
-    conta.visualizar();
+    conta.visualizar(); 
+
+//  Instanciacao de Objeto 01 conforme Task 02
+
+//     const conta: Conta = new Conta(158160, 33, 1, "Frederico dos Anjos", 350);
+
+//     conta.visualizar();
+//     conta.sacar(0);
+//     conta.visualizar();
+//     conta.depositar(600);
+//     conta.visualizar(); 
+
+//  Instanciacao de Objeto 02 conforme Task 02
+
+//     const conta: Conta = new Conta(819419, 33, 2, "Carlos Marcos", 23640);
+
+//     conta.visualizar();
+//     conta.sacar(500);
+//     conta.visualizar();
+//     conta.depositar(1000);
+//     conta.visualizar(); 
 
     while (true) {
 
