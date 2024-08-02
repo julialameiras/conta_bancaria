@@ -21,7 +21,11 @@ export class ContaController implements ContaRepository {
 
   cadastrar(conta: Conta): void {
     this.listaContas.push(conta);
-    console.log(colors.fg.green, "\nA Conta numero: " + conta.numero + " foi cadastrada com sucesso!", colors.reset);
+    console.log(
+      colors.fg.crimson,
+      "\nA Conta numero: " + conta.numero + " foi cadastrada com sucesso!",
+      colors.reset
+    );
   }
 
   atualizar(conta: Conta): void {
@@ -29,9 +33,17 @@ export class ContaController implements ContaRepository {
 
     if (buscaConta != null) {
       this.listaContas[this.listaContas.indexOf(buscaConta)] = conta;
-      console.log("\nA conta número: " + conta.numero + " foi atualizada com sucesso!");
+      console.log(
+        colors.fg.crimson,
+        "\nA conta número: " + conta.numero + " foi atualizada com sucesso!",
+        colors.reset
+      );
     } else
-      console.log("\nA conta número: " + conta.numero + " não foi encontrada!");
+      console.log(
+        colors.fg.crimson,
+        "\nA conta número: " + conta.numero + " não foi encontrada!",
+        colors.reset
+      );
   }
 
   deletar(numero: number): void {
@@ -39,8 +51,17 @@ export class ContaController implements ContaRepository {
 
     if (buscaConta != null) {
       this.listaContas.splice(this.listaContas.indexOf(buscaConta), 1);
-      console.log("\nA conta número: " + numero + " foi deletada com sucesso!");
-    } else console.log("\nA conta número: " + numero + " não foi encontrada!");
+      console.log(
+        colors.fg.crimson,
+        "\nA conta número: " + numero + " foi deletada com sucesso!",
+        colors.reset
+      );
+    } else
+      console.log(
+        colors.fg.crimson,
+        "\nA conta número: " + numero + " não foi encontrada!",
+        colors.reset
+      );
   }
 
   public sacar(numero: number, valor: number): void {
@@ -48,8 +69,17 @@ export class ContaController implements ContaRepository {
 
     if (conta != null) {
       if (conta.sacar(valor) == true)
-        console.log("\nO Saque na Conta numero: " + numero + " foi realizado com sucesso!");
-    } else console.log("\nA conta número: " + numero + " não foi encontrada!");
+        console.log(
+          colors.fg.crimson,
+          "\nO Saque na Conta numero: " + numero + " foi realizado com sucesso!",
+          colors.reset
+        );
+    } else
+      console.log(
+        colors.fg.crimson,
+        "\nA conta número: " + numero + " não foi encontrada!",
+        colors.reset
+      );
   }
 
   depositar(numero: number, valor: number): void {
@@ -57,8 +87,17 @@ export class ContaController implements ContaRepository {
 
     if (conta != null) {
       conta.depositar(valor);
-      console.log("\nO Depósito na Conta numero: " + numero + " foi realizado com sucesso!");
-    } else console.log("\nA conta número: " + numero + " não foi encontrada!");
+      console.log(
+        colors.fg.crimson,
+        "\nO Depósito na Conta numero: " + numero + " foi realizado com sucesso!",
+        colors.reset
+      );
+    } else
+      console.log(
+        colors.fg.crimson,
+        "\nA conta número: " + numero + " não foi encontrada!",
+        colors.reset
+      );
   }
 
   public transferir(
@@ -72,10 +111,18 @@ export class ContaController implements ContaRepository {
     if (contaOrigem != null && contaDestino != null) {
       if (contaOrigem.sacar(valor) == true) {
         contaDestino.depositar(valor);
-        console.log("\nA Transferência da Conta numero: " + numeroOrigem + " para a Conta numero " + numeroDestino + " foi efetuada com sucesso!");
+        console.log( 
+          colors.fg.crimson,
+          "\nA Transferência da Conta numero: " + numeroOrigem + " para a Conta numero " + numeroDestino + " foi efetuada com sucesso!", 
+          colors.reset
+        );
       }
     } else
-      console.log("\nA conta numero: " + numeroOrigem + " e/ou Conta numero: " + numeroDestino + " não foram encontradas!");
+      console.log(
+        colors.fg.crimson, 
+        "\nA conta numero: " + numeroOrigem + " e/ou Conta numero: " + numeroDestino + " não foram encontradas!", 
+        colors.reset
+      );
   }
 
   public gerarNumero(): number {

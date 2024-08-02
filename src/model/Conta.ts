@@ -74,7 +74,7 @@ export class Conta {
 
         let tipo: string = "";
 
-            switch(this._tipo){
+            switch(this._tipo) {
                 case 1:
                  tipo = "Conta Corrente";
                  break;
@@ -83,13 +83,13 @@ export class Conta {
                  break;
     }
 
-    console.log("\n\n*************************************************************************");
+    console.log("\n*************************************************************************");
             console.log("Dados da Conta");
             console.log("*************************************************************************");
             console.log("Numero da Conta: " + this._numero);
             console.log("Agencia: " + this._agencia);
             console.log("Tipo da Conta: " + this._tipo);
             console.log("Titular: " + this._titular);
-            console.log("Saldo: " + this._saldo);
+            console.log("Saldo: " + this._saldo.toFixed(2));
 }
 }
